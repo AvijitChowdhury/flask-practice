@@ -9,7 +9,7 @@ def hello():
 
 @app.route('/success/<int:score>')
 def success(score):
-    return 'NOthing than score: '+str(score)
+    return '<html><body><h1>NOthing than score: </h1></body></html>'+str(score)
 
 @app.route('/fail/<int:score>')
 def fail(score):
