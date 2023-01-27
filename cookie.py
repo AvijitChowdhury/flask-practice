@@ -5,13 +5,15 @@ app = Flask(__name__)
 def index():
     return render_template('setcookies.html')
 
+
 @app.route('/setcookie',methods=['POST','GET'])
 def setcookie():
-    if request.method=="POST":
+    if request.method=='POST':
         user=request.form['name']
         response=make_response(render_template('readcookie.html'))
         response.set_cookie('userID',user)
         return response
+        
 @app.route('/getcookie')
 def getcookie():
     name=request.cookies.get('userID')
